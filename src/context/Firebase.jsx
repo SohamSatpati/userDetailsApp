@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import {createContext, useCallback, useContext, useEffect, useState} from 'react'
@@ -8,13 +9,13 @@ import {getDatabase,  onValue,  ref, set} from 'firebase/database'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD1VLLw8YSrhkM4lEThOEitP8owydGSuKk",
-  authDomain: "userdetailsapp-f86da.firebaseapp.com",
-  projectId: "userdetailsapp-f86da",
-  storageBucket: "userdetailsapp-f86da.appspot.com",
-  messagingSenderId: "1076826158502",
-  appId: "1:1076826158502:web:d955697f151564907d4b67",
-  databaseURL:'https://userdetailsapp-f86da-default-rtdb.firebaseio.com/'
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  databaseURL:import.meta.env.VITE_DATABASEURI
 };
 const FirebaseContext = createContext(null);
 const firebaseApp = initializeApp(firebaseConfig);
